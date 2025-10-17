@@ -14,7 +14,7 @@ const quotes = [{text: "Success is not the key to happiness. Happiness is the ke
      function showRandomQuote(){
         const randomNumber = Math.floor(Math.random() * quotes.length);
         const randomQuote = quotes[randomNumber];
-        quoteDisplay.textContent = `"${randomQuote.text}" - ${randomQuote.category}`;
+        quoteDisplay.innerHTML = `"${randomQuote.text}" - ${randomQuote.category}`;
 
      }
      newQuoteBtn.addEventListener("click", showRandomQuote);
