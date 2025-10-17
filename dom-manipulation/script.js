@@ -23,7 +23,7 @@ const quotes = [{text: "Success is not the key to happiness. Happiness is the ke
 
      //user adding quotes
 
-     function addQuote(){
+     function createAddQuoteForm(){
         const text = newQuoteText.value.trim();
         const category =  newQuoteCategory.value.trim(); 
         if(text === "" || category === ""){
