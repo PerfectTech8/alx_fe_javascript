@@ -8,13 +8,16 @@
   <body>
     <h1>Dynamic Quote Generator</h1>
     <div id="quoteDisplay"></div>
-    <button id="newQuote">Show New Quote</button>
+    <!-- <button id="newQuote">Show New Quote</button> -->
     <div>
     <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
     <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
-    <button onClick="createAddQuoteForm()">Add Quote</button><br><br>
+    <button id="add">Add Quote</button><br><br>
     <button id="exportBtn">Export Quotes</button><br><br>
-    <input type="file" id="importFile" accept=".json" onChange="importFromJsonFile(event)"/>
+    <input type="file" id="importFile" accept=".json" onChange="importFromJsonFile(event)"/><br><br>
+     <select id="categoryFilter"  onChange="filterQuotes()">
+      <option value="all">All Categories</option>
+    </select>
     <!-- <button id="importBtn">Import Quote</button> -->
      
     
