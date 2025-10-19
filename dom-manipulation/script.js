@@ -147,7 +147,7 @@ const addBtn = document.getElementById("add");
 
    function filterQuotes(){
       const selectedCat = categoryFilter.value;
-      localStorage.setItem("selectedCat", selectedCat);
+      localStorage.setItem("selectedCategory", selectedCat);
       let filteredOption = selectedCat === "all" ? quotes : quotes.filter(q => q.category === selectedCat);
       if(filteredOption.length === 0){
          quoteDisplay.innerHTML = "No quotes avalaible for this category";
@@ -161,7 +161,7 @@ const addBtn = document.getElementById("add");
    //Restore last selected filter from storage
 
    function restoreFilter(){
-   const lastSelected = localStorage.getItem("selectedCat");
+   const lastSelected = localStorage.getItem("selectedCategory");
    if(lastSelected && [... categoryFilter.options]
       .some(opt => opt.value === lastSelected)
    ){
