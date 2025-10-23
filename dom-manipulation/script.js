@@ -277,7 +277,7 @@ function saveLocalQuotes(quotes){
       conflictFound = true;
    }
 })
-if(conflictFound) notifyUser("some Quotes were updated from the server");
+if(conflictFound) notifyUser("Quotes synced with server!");
 return merged
 }
 
