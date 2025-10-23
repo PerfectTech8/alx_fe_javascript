@@ -203,7 +203,7 @@ const serverUrl = "https://jsonplaceholder.typicode.com/posts";
 
 //fetch quote from server 
 
-async function fetchQuoteFromServer(){
+async function fetchQuotesFromServer(){
    try{
       const response = await fetch(serverUrl);
       const data = await response.json();
@@ -264,7 +264,7 @@ function saveLocalQuotes(quotes){
 
    async function mergeQuotes(localQuotes, serverQuotes){
    localQuotes = getLocalQuotes();
-   const serverNewQuotes = await fetchQuoteFromServer();
+   const serverNewQuotes = await fetchQuotesFromServer();
    const merged = [... localQuotes];
    let conflictFound = false;
    serverNewQuotes.forEach(serverNewQuote => {
@@ -301,7 +301,7 @@ function notifyUser(message){
 
    async function syncQuotes(){
    const localQuotes = getLocalQuotes();
-   const server = await fetchQuoteFromServer();
+   const server = await fetchQuotesFromServer();
    const combinedQuotes = await mergeQuotes(localQuotes, server);
    saveLocalQuotes(combinedQuotes);
    const selectedCategory = localStorage.getItem("selectedCategory") || "All";
